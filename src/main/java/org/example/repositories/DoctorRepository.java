@@ -36,10 +36,6 @@ public class DoctorRepository extends GenericRepository<Doctor, Long> {
         Query<Doctor> findQuery = session.createQuery(query, Doctor.class);
         findQuery.setParameter("specialization",specialization);
         return findQuery.getResultList();
-
-
-
     }
-
 
 }
