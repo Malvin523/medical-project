@@ -2,6 +2,7 @@ package org.example.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.example.enums.DoctorSpecialization;
 
 import java.time.LocalTime;
 import java.util.List;
@@ -18,6 +19,11 @@ public class Doctor {
     private String firstName;
     @Column(name ="last_name")
     private String lastName;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "specialization")
+    private DoctorSpecialization specialization;
+
     @Column(name = "contact_info")
     private String contactInfo;
     @Column(name ="start_work_at")
