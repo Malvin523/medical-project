@@ -5,13 +5,15 @@ import org.example.enums.DoctorSpecialization;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import javax.print.Doc;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 public class DoctorRepository extends GenericRepository<Doctor, Long> {
     private final Session session;
 
-    public DoctorRepository(Session session) {
-
+    public DoctorRepository(Session session){
         super(session, Doctor.class);
         this.session = session;
     }
@@ -36,10 +38,14 @@ public class DoctorRepository extends GenericRepository<Doctor, Long> {
         Query<Doctor> findQuery = session.createQuery(query, Doctor.class);
         findQuery.setParameter("specialization",specialization);
         return findQuery.getResultList();
+    }
 
-
+    public Doctor updateWorkSchegule(Long id, LocalTime start, LocalTime end){
 
     }
+
+    }
+
 
 
 }
