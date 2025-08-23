@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.example.enums.AppointmentStatus;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -19,7 +20,7 @@ public class Appointment {
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
     @Column(name = "appointment_time")
-    private LocalTime appointmentTime;
+    private LocalDateTime appointmentTime;
     private String pourpose;
     @Enumerated(EnumType.STRING)
     @Column(name = "status")

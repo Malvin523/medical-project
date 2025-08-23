@@ -19,18 +19,15 @@ public class Doctor {
     private String firstName;
     @Column(name ="last_name")
     private String lastName;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "specialization")
     private DoctorSpecialization specialization;
-
     @Column(name = "contact_info")
     private String contactInfo;
     @Column(name ="start_work_at")
     private LocalTime StartWorkAt;
     @Column(name = "end_work_at")
     private LocalTime EndWorkAt;
-
     @OneToMany(mappedBy = "doctor")
     private List<Appointment> appointments;
 
