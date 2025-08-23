@@ -2,6 +2,7 @@ package org.example.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.example.enums.AppointmentStatus;
 
 import java.time.LocalTime;
 
@@ -20,6 +21,9 @@ public class Appointment {
     @Column(name = "appointment_time")
     private LocalTime appointmentTime;
     private String pourpose;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private AppointmentStatus appointmentStatus;
 
 
 
