@@ -1,6 +1,7 @@
 package org.example.services;
 
 import org.example.entities.Appointment;
+import org.example.entities.Doctor;
 import org.example.enums.AppointmentStatus;
 import org.example.repositories.AppointmentRepository;
 import org.example.repositories.DoctorRepository;
@@ -31,6 +32,8 @@ public class AppointmentService {
         appointment.setDoctor(doctorRepository.findById(doctorId));
         return appointmentRepository.save(appointment);
     }
+
+
 
 
 

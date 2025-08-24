@@ -6,6 +6,7 @@ import org.example.enums.AppointmentStatus;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
 
 @Entity
 @Table(name = "appointments")
@@ -25,6 +26,8 @@ public class Appointment {
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private AppointmentStatus appointmentStatus;
+    @OneToMany(mappedBy = "appointment")
+    private List<Prescription> prescriptions;
 
 
 
