@@ -40,12 +40,8 @@ public class DoctorRepository extends GenericRepository<Doctor, Long> {
         return findQuery.getResultList();
     }
 
-    public Doctor updateWorkSchegule(Long id, LocalTime start, LocalTime end){
 
     }
 
-    }
 
 
-
-}
